@@ -6,11 +6,16 @@ I
  \w 单词字符 [A-Za-z0-9]    a\wc  abc
  \W 非单词组 [^\w]          a\wc  a c
 II
- + 匹配前一个字符1次或无限次数 abc+   abc 
+ + 匹配前一个字符1次或无限次数 abc+   abc        ps：+单独存在意味着开启贪婪匹配abdefg用+会全部匹配 但是如果是+？就只会匹配一个
                                     abcccc
  ？匹配前一个字符0次或1次
+
+{n}表示匹配前面的字符n次 a{2} 匹配a两次
+
 III 正则表达式常用比对方式：
   Pattern pattern = Pattern.compile("正则表达式");//正则表达式 用作后续的匹配规则
   Matcher pattern.matcher("需要匹配验证的字符串");
-
+IV
+ ^表示行的开头 ^\d 表示必须以数字开头
+ $表示行的结尾 \d$ 表示必须以数字结尾
  
